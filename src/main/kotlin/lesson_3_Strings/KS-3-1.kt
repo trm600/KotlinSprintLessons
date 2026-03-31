@@ -4,6 +4,7 @@ fun main() {
     val dayHi = "Добрый день"
     val eveningHi = "Добрый вечер"
     val userName = "Порфирий"
+
     var helloSay = "$dayHi! $userName"
     println(helloSay)
     helloSay = "$eveningHi! $userName"
