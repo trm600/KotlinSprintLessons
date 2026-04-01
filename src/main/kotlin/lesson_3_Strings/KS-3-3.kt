@@ -1,12 +1,18 @@
 ﻿package org.example.lesson_3_Strings
 
 fun main() {
-    val factor = readln().toByte()
+    val factor: Byte = 7
+    var i: Byte = 1
 
-    if (factor <= 9) {
-        for (i in 1..9) {
-            println("$factor x $i = ${factor * i}")
-        }
-
-    }
+    println("""
+        |$factor x $i = ${factor * i++}
+        |$factor x $i = ${factor * i++}
+        |$factor x $i = ${factor * i++}
+        |$factor x $i = ${factor * i++}
+        |$factor x $i = ${factor * i++}
+        |$factor x $i = ${factor * i++}
+        |$factor x $i = ${factor * i++}
+        |$factor x $i = ${factor * i++}
+        |$factor x $i = ${factor * i}
+    """.trimMargin())
 }
