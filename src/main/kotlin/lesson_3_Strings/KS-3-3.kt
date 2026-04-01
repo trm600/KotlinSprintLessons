@@ -2,17 +2,17 @@
 
 fun main() {
     val factor: Byte = 7
-    var i: Byte = 1
+    var counter: Byte = 1
 
     println("""
-        |$factor x $i = ${factor * i++}
-        |$factor x $i = ${factor * i++}
-        |$factor x $i = ${factor * i++}
-        |$factor x $i = ${factor * i++}
-        |$factor x $i = ${factor * i++}
-        |$factor x $i = ${factor * i++}
-        |$factor x $i = ${factor * i++}
-        |$factor x $i = ${factor * i++}
-        |$factor x $i = ${factor * i}
+        |$factor x $counter = ${factor * counter++}
+        |$factor x $counter = ${factor * counter++}
+        |$factor x $counter = ${factor * counter++}
+        |$factor x $counter = ${factor * counter++}
+        |$factor x $counter = ${factor * counter++}
+        |$factor x $counter = ${factor * counter++}
+        |$factor x $counter = ${factor * counter++}
+        |$factor x $counter = ${factor * counter++}
+        |$factor x $counter = ${factor * counter}
     """.trimMargin())
 }
