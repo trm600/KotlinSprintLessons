@@ -10,7 +10,7 @@ fun main() {
     val timeOfYear = "зима"
 
     println(
-        "Благоприятные ли условия сейчас для роста бобовых? " + "${
+        "Благоприятные ли условия сейчас для роста бобовых? ${
             isSunnyWeather &&
             isAwningOpen &&
             airHumidity == FAVORABLE_AIR_HUMIDITY &&
