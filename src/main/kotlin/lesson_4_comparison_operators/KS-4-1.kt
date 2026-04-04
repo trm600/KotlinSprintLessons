@@ -6,5 +6,5 @@ fun main() {
     val bookedToday: Byte = 13
     val bookedTomorrow: Byte = 9
 
-    println("Доступность столиков на сегодня:${bookedToday < TOTAL_TABLES}\nДоступность столиков на завтра:${bookedTomorrow < TOTAL_TABLES}")
+    println("[Доступность столиков на сегодня: ${bookedToday < TOTAL_TABLES}],\n[Доступность столиков на завтра: ${bookedTomorrow < TOTAL_TABLES}]")
 }
