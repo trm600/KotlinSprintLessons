@@ -11,7 +11,10 @@ fun main() {
 
     println(
         "Благоприятные ли условия сейчас для роста бобовых? " + "${
-            isSunnyWeather && isAwningOpen && airHumidity == FAVORABLE_AIR_HUMIDITY && timeOfYear != UNFAVORABLE_SEASON
+            isSunnyWeather &&
+            isAwningOpen &&
+            airHumidity == FAVORABLE_AIR_HUMIDITY &&
+            timeOfYear != UNFAVORABLE_SEASON
         }"
     )
 }
