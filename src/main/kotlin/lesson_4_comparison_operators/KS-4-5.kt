@@ -31,9 +31,5 @@ fun main() {
             isGoodWeather &&
             provisionsBoxes >= MINIMUM_PROVISIONS &&
             (isBodyDamaged && isMinorDamage)
-    print("Корабль может отплыть?: ")
-    when (canVoyage || canVoyageAlt) {
-        true -> print("Да")
-        false -> print("Нет")
-    }
+    println(canVoyage || canVoyageAlt)
 }
