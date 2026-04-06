@@ -16,12 +16,8 @@ fun main() {
 
     print("Корпус повреждён?: ")
     isBodyDamaged = readln().toBoolean()
-    if (isBodyDamaged) {
-        print("Повреждения незначительные?: ")
-        isMinorDamage = readln().toBoolean()
-    } else {
-        isMinorDamage = false
-    }
+    print("Повреждения незначительные?: ")
+    isMinorDamage = readln().toBoolean()
     print("Число экипажа: ")
     numberOfCrew = readln().toInt()
     print("Число ящиков с провизией: ")
@@ -34,7 +30,7 @@ fun main() {
     canVoyageAlt = numberOfCrew == MAXIMUM_CREW &&
             isGoodWeather &&
             provisionsBoxes >= MINIMUM_PROVISIONS &&
-            (!isBodyDamaged || isBodyDamaged && isMinorDamage)
+            (isBodyDamaged && isMinorDamage)
     print("Корабль может отплыть?: ")
     when (canVoyage || canVoyageAlt) {
         true -> print("Да")
