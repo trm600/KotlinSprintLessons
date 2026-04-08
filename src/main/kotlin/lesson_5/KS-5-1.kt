@@ -7,7 +7,7 @@ fun main() {
     val sum = term1 + term2
 
     print("Докажи, что не бот, сколько будет: $term1 + $term2 = ")
-    val answer = readln().toIntOrNull()
+    val answer = readln().toInt()
     if (answer == sum) {
         println("Добро пожаловать!")
     } else {
