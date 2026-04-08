@@ -1,12 +1,14 @@
 ﻿package org.example.lesson_5
 
-const val CORRECT_ANSWER = 4
-
 fun main() {
 
-    print("Докажи, что не бот, - 2 + 2 = ")
+    val term1 = (0..10).random()
+    val term2 = (0..10).random()
+    val sum = term1 + term2
+
+    print("Докажи, что не бот, - $term1 + $term2 = ")
     val answer = readln().toIntOrNull()
-    if (answer == CORRECT_ANSWER) {
+    if (answer == sum) {
         println("Добро пожаловать!")
     } else {
         println("Доступ запрещен.")
