@@ -12,12 +12,9 @@ fun main() {
     val isGoodWeather: Boolean
     val canVoyage: Boolean
     val canVoyageAlt: Boolean
-    val isMinorDamage: Boolean
 
     print("Корпус повреждён?: ")
     isBodyDamaged = readln().toBoolean()
-    print("Повреждения незначительные?: ")
-    isMinorDamage = readln().toBoolean()
     print("Число экипажа: ")
     numberOfCrew = readln().toInt()
     print("Число ящиков с провизией: ")
@@ -27,9 +24,9 @@ fun main() {
     canVoyage = !isBodyDamaged &&
             numberOfCrew in MINIMUM_CREW..MAXIMUM_CREW &&
             provisionsBoxes > MINIMUM_PROVISIONS
-    canVoyageAlt = numberOfCrew == MAXIMUM_CREW &&
+    canVoyageAlt = isBodyDamaged &&
+            numberOfCrew == MAXIMUM_CREW &&
             isGoodWeather &&
-            provisionsBoxes >= MINIMUM_PROVISIONS &&
-            (isBodyDamaged && isMinorDamage)
+            provisionsBoxes >= MINIMUM_PROVISIONS
     println(canVoyage || canVoyageAlt)
 }
