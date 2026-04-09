@@ -1,21 +1,25 @@
 ﻿package org.example.lesson_5
 
-const val USER = "Zaphod"
-const val PASS = "PanGalactic"
+const val REGISTERED_USER = "Zaphod"
+const val REGISTERED_USER_PASS = "PanGalactic"
 
 fun main() {
-
     print("Введите имя пользователя: ")
     val userName = readln()
     when (userName) {
-        USER -> {
+        REGISTERED_USER -> {
             print("Введите пароль: ")
             val password = readln()
-            when (password) {
-               PASS -> println("Пользователь \"$userName\", вам разрешено " +
-                       "входить на борт корабля \"Heart of Gold\"")
-            }
+            println(
+                when (password) {
+                    REGISTERED_USER_PASS -> "Пользователь \"$userName\", вам разрешено " +
+                            "входить на борт корабля \"Heart of Gold\""
+
+                    else -> "Пароль неверен. Доступ запрещен."
+                }
+            )
         }
+
         else -> println("Пожалуйста зарегистрируйтесь")
     }
 }
