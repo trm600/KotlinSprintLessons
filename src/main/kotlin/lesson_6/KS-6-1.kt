@@ -12,7 +12,7 @@ fun main() {
         val inputLogin = readln()
         println("Введите ваш пароль: ")
         val inputPassword = readln()
-        val isAuthorization = inputLogin == login && inputPassword == password
+        val isAuthorization = (inputLogin == login && inputPassword == password)
         if (!isAuthorization) {
             println("Логин или пароль не верны, попробуйте снова.")
         }
