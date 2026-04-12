@@ -1,16 +1,21 @@
 ﻿package org.example.lesson_6
 
 fun main() {
-    print("Введите желаемый логин: ")
+    println("Введите желаемый логин: ")
     val login = readln()
-    print("Введите желаемый пароль: ")
+    println("Введите желаемый пароль: ")
     val password = readln()
+    println("Регистрация прошла успешно")
 
     do {
         println("Введите ваш логин: ")
         val inputLogin = readln()
         println("Введите ваш пароль: ")
         val inputPassword = readln()
-    } while (inputLogin != login || inputPassword != password)
+        val isAutorize = inputLogin == login && inputPassword == password
+        if (!isAutorize) {
+            println("Логин или пароль не верны, попробуйте снова.")
+        }
+    } while (!isAutorize)
     println("Авторизация прошла успешно!")
 }
