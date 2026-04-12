@@ -18,9 +18,11 @@ fun main() {
             }
 
             else -> {
-                println("Фиг вам, попыток осталось: ${NUMBER_OF_ATTEMPTS - counter}")
+                if (counter != NUMBER_OF_ATTEMPTS) {
+                    println("Фиг вам, попыток осталось: ${NUMBER_OF_ATTEMPTS - counter}")
+                }
                 if (counter == NUMBER_OF_ATTEMPTS) {
-                    println("Было загадано число $bingo")
+                    println("Не угадал! Было загадано число $bingo")
                 }
             }
         }
