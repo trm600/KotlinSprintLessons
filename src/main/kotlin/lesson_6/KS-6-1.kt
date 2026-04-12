@@ -1,6 +1,8 @@
 ﻿package org.example.lesson_6
 
 fun main() {
+    var isAuthorization = false
+
     println("Введите желаемый логин: ")
     val login = readln()
     println("Введите желаемый пароль: ")
@@ -12,8 +14,9 @@ fun main() {
         val inputLogin = readln()
         println("Введите ваш пароль: ")
         val inputPassword = readln()
-        val isAuthorization = (inputLogin == login && inputPassword == password)
-        if (!isAuthorization) {
+        if (inputLogin == login && inputPassword == password) {
+            isAuthorization = true
+        } else {
             println("Логин или пароль не верны, попробуйте снова.")
         }
     } while (!isAuthorization)
