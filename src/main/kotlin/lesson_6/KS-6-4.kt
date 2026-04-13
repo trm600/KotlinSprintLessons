@@ -15,10 +15,10 @@ fun main() {
             println("Угадал! Это была великолепная игра!")
             return
         } else {
-            if (counter > 1) {
-                println("Фиг вам, попыток осталось: ${counter - 1}")
+            if (--counter > 0) {
+                println("Фиг вам, попыток осталось: $counter")
             }
         }
-    } while (--counter > 0)
+    } while (counter > 0)
     println("Не угадал! Было загадано число: $bingo")
 }
