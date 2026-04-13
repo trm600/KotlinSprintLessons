@@ -5,27 +5,22 @@ const val MAXIMUM_NUMBER = 9
 const val NUMBER_OF_ATTEMPTS = 5
 
 fun main() {
-    var counter = 1
+    var counter = NUMBER_OF_ATTEMPTS
     val bingo = (MINIMUM_NUMBER..MAXIMUM_NUMBER).random()
 
     do {
         println("Введи число от $MINIMUM_NUMBER до $MAXIMUM_NUMBER: ")
         val userNumber = readln().toInt()
-        when {
-            userNumber == bingo -> {
-                println("Угадал! Это была великолепная игра!")
-                return
-            }
-
-            else -> {
-                if (counter != NUMBER_OF_ATTEMPTS) {
-                    println("Фиг вам, попыток осталось: ${NUMBER_OF_ATTEMPTS - counter}")
-                }
-                if (counter == NUMBER_OF_ATTEMPTS) {
-                    println("Не угадал! Было загадано число $bingo")
-                }
+        if (userNumber == bingo) {
+            println("Угадал! Это была великолепная игра!")
+            return
+        } else {
+            if (counter > 1) {
+                println("Фиг вам, попыток осталось: ${counter - 1}")
+            } else {
+                println("Не угадал! Было загадано число $bingo")
             }
         }
-        counter++
-    } while (counter <= NUMBER_OF_ATTEMPTS)
+        --counter
+    } while (counter != 0)
 }
