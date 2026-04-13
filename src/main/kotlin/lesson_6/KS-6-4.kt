@@ -11,16 +11,14 @@ fun main() {
     do {
         println("Введи число от $MINIMUM_NUMBER до $MAXIMUM_NUMBER: ")
         val userNumber = readln().toInt()
-        counter--
         if (userNumber == bingo) {
             println("Угадал! Это была великолепная игра!")
             return
         } else {
-            if (counter > 0) {
-                println("Фиг вам, попыток осталось: ${counter}")
-            } else {
-                println("Не угадал! Было загадано число: $bingo")
+            if (counter > 1) {
+                println("Фиг вам, попыток осталось: ${counter - 1}")
             }
         }
-    } while (counter > 0)
+    } while (--counter > 0)
+    println("Не угадал! Было загадано число: $bingo")
 }
