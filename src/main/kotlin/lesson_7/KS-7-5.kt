@@ -6,9 +6,8 @@ fun main() {
     val lowercase = 'a'..'z'
     val uppercase = 'A'..'Z'
     val numbers = '0'..'9'
-    val options = mutableListOf(1, 2, 3)
+    val allChars = lowercase + numbers + uppercase
     val password = mutableListOf<Char>()
-    var finalPassword = ""
     var passwordLen: Int
 
     do {
@@ -20,22 +19,10 @@ fun main() {
     password.add(numbers.random())
 
     for (i in passwordLen downTo 4) {
-        val option = options[options.indices.random()]
-        password.add(
-            when (option) {
-                1 -> lowercase.random()
-                2 -> uppercase.random()
-                3 -> numbers.random()
-                else -> return
-            }
-        )
+        password.add(allChars.random())
     }
 
-    do {
-        val index = password.indices.random()
-        finalPassword += password[index]
-        password.removeAt(index)
-    } while (password.isNotEmpty())
-
+    password.shuffle()
+    val finalPassword = password.joinToString("")
     println(finalPassword)
 }
