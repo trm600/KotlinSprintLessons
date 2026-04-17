@@ -18,7 +18,7 @@ fun main() {
     password.add(uppercase.random())
     password.add(numbers.random())
 
-    for (i in passwordLen downTo 4) {
+    for (i in 4..passwordLen) {
         password.add(allChars.random())
     }
 
