@@ -6,10 +6,10 @@ fun main() {
     println("Список ингредиентов: ${formatString(ingredientsList)}")
     println("Введите название заменяемого ингредиента: ")
     val ingredient = readln().lowercase()
-    if (ingredientsList.contains(ingredient)) {
+    val ingredientIndex = ingredientsList.indexOf(ingredient)
+    if (ingredientIndex >= 0) {
         println("Введите ингредиент для замены: ")
-        val newIngredient = readln().lowercase()
-        ingredientsList[ingredientsList.indexOf(ingredient)] = newIngredient
+        ingredientsList[ingredientIndex] = readln().lowercase()
         println("Готово! Вы сохранили следующий список: ${formatString(ingredientsList)}")
     } else {
         println("Такого ингредиента в рецепте нет")
