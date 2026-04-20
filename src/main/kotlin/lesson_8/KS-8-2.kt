@@ -6,10 +6,10 @@ fun main() {
     println("Введите название искомого ингредиента: ")
     val ingredient = readln()
     for (item in ingredientsList) {
-        if (item.equals(ingredient, ignoreCase = true)) {
+        if (item.lowercase() == ingredient.lowercase()) {
             println("Ингредиент $item в рецепте есть")
             return
-            }
+        }
     }
     println("Такого ингредиента в рецепте нет")
 }
