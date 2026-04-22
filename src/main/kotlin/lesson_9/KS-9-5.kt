@@ -25,5 +25,11 @@ fun main() {
         }
     } while (counter <= INGREDIENTS_QUANTITY)
     ingredientsList.sort()
-    println("Итоговый список: ${ingredientsList.joinToString(", ", postfix = ".").replaceFirstChar { it.uppercase() }}")
+    println(
+        "Итоговый список: ${
+            ingredientsList
+                .joinToString(", ", postfix = ".")
+                .replaceFirstChar { it.uppercase() }
+        }"
+    )
 }
