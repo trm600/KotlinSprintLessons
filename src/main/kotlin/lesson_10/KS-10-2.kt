@@ -3,9 +3,9 @@
 const val MIN_LENGTH = 4
 
 fun main() {
-    println("Введите желаемый логин (мин.4 символа): ")
+    println("Введите желаемый логин (мин. $MIN_LENGTH символа): ")
     val userLogin = readln()
-    println("Введите желаемый пароль (мин.4 символа): ")
+    println("Введите желаемый пароль (мин. $MIN_LENGTH символа): ")
     val userPassword = readln()
     val isValid = checkCredentialLength(userLogin, userPassword)
     if (isValid) {
