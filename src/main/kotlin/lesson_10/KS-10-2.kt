@@ -1,5 +1,7 @@
 ﻿package org.example.lesson_10
 
+const val MIN_LENGTH = 4
+
 fun main() {
     println("Введите желаемый логин (мин.4 символа): ")
     val userLogin = readln()
@@ -7,12 +9,12 @@ fun main() {
     val userPassword = readln()
     val isValid = checkCredentialLength(userLogin, userPassword)
     if (isValid) {
-        println("Регистрация прошла успешно!")
+        println("Категорически приветствую! Регистрация прошла успешно!")
     } else {
         println("Логин или пароль недостаточно длинные!")
     }
 }
 
 fun checkCredentialLength(login: String, password: String): Boolean {
-    return login.length >= 4 && password.length >= 4
+    return login.length >= MIN_LENGTH && password.length >= MIN_LENGTH
 }
