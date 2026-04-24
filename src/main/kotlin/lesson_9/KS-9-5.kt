@@ -16,8 +16,8 @@ fun main() {
     }
 
     val ingredientsSet = ingredientsList
-        .sorted()
         .toSet()
+        .sorted()
     println(
         "Итоговый список: ${
             ingredientsSet
