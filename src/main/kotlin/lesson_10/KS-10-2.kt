@@ -1,13 +1,15 @@
 ﻿package org.example.lesson_10
 
 fun main() {
-    println("Введите желаемый логин: ")
+    println("Введите желаемый логин (мин.4 символа): ")
     val userLogin = readln()
-    println("Введите желаемый пароль: ")
+    println("Введите желаемый пароль (мин.4 символа): ")
     val userPassword = readln()
     val isValid = checkCredentialLength(userLogin, userPassword)
-    if (!isValid) {
-        println("Логин или пароль недостаточно длинные")
+    if (isValid) {
+        println("Регистрация прошла успешно!")
+    } else {
+        println("Логин или пароль недостаточно длинные!")
     }
 }
 
