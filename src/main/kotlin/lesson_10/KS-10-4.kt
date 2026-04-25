@@ -33,12 +33,8 @@ fun makeThrow(sidesDice: Int): Boolean {
             true
         }
 
-        rollPc == rollHuman -> {
-            println("Силы равны!")
-            false
-        }
-
         else -> {
+            println("Силы равны!")
             false
         }
     }
