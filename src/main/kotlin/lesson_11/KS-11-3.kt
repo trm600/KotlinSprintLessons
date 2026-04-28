@@ -3,7 +3,7 @@
 class Room {
     var cover: String = "пикча"
     var roomTheme: String = ""
-    var listOfParticipants: MutableList<Person> = mutableListOf()
+    val listOfParticipants: MutableList<Person> = mutableListOf()
 
     fun addPerson(person: Person) = listOfParticipants.add(person)
 
