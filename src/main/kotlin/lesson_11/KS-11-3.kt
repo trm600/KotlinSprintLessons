@@ -7,10 +7,14 @@ class Room {
 
     fun addPerson(person: Person) = listOfParticipants.add(person)
 
-    fun updateStatus(person: Person, newStatus: String) {
-        val userIndex = listOfParticipants.indexOf(person)
-        if (userIndex != -1) {
-            listOfParticipants[userIndex].status = newStatus
+    fun updateStatus(nickname: String, newStatus: String) {
+        if (listOfParticipants.isNotEmpty()) {
+            for (person in listOfParticipants) {
+                if (person.nickname == nickname) {
+                    person.status = newStatus
+                }
+            }
+
         }
     }
 
@@ -49,8 +53,8 @@ fun main() {
     person2.nickname = "devidDuhovni"
     rockMusicRoom.addPerson(person1)
     rockMusicRoom.addPerson(person2)
-    rockMusicRoom.updateStatus(person1, "разговаривает")
-    rockMusicRoom.updateStatus(person2, "пользователь заглушен")
+    rockMusicRoom.updateStatus("semenbIch", "разговаривает")
+    rockMusicRoom.updateStatus("devidDuhovni", "пользователь заглушен")
     rockMusicRoom.displayRoom()
     rockMusicRoom.longPress(person2)
 }
