@@ -1,20 +1,17 @@
 ﻿package org.example.lesson_11
 
-class Room {
-    var cover: String = "пикча"
-    var roomTheme: String = ""
-    val listOfParticipants: MutableList<Person> = mutableListOf()
-
+class Room(
+    var cover: String = "пикча",
+    var roomTheme: String = "",
+    val listOfParticipants: MutableList<Person> = mutableListOf(),
+) {
     fun addPerson(person: Person) = listOfParticipants.add(person)
 
     fun updateStatus(nickname: String, newStatus: String) {
-        if (listOfParticipants.isNotEmpty()) {
-            for (person in listOfParticipants) {
-                if (person.nickname == nickname) {
-                    person.status = newStatus
-                }
+        for (person in listOfParticipants) {
+            if (person.nickname == nickname) {
+                person.status = newStatus
             }
-
         }
     }
 
@@ -34,23 +31,26 @@ class Room {
     }
 }
 
-class Person {
-    var avatar: String = "аватарка"
-    var nickname: String = ""
-    var status: String = "микрофон выключен"
-}
+class Person(
+    var avatar: String = "аватарка",
+    var nickname: String = "",
+    var status: String = "микрофон выключен",
+)
 
 fun main() {
-    val rockMusicRoom = Room()
-    val person1 = Person()
-    val person2 = Person()
+    val rockMusicRoom = Room(
+        cover = "Обложка \"Картинка пластинки\"",
+        roomTheme = "Любители рок музыки",
+    )
+    val person1 = Person(
+        avatar = "Аватар мотоцикл",
+        nickname = "semenbIch",
+    )
+    val person2 = Person(
+        avatar = "Аватар огонь",
+        nickname = "devidDuhovni",
+    )
 
-    rockMusicRoom.cover = "Обложка \"Картинка пластинки\""
-    rockMusicRoom.roomTheme = "Любители рок музыки"
-    person1.avatar = "Аватар мотоцикл"
-    person1.nickname = "semenbIch"
-    person2.avatar = "Аватар огонь"
-    person2.nickname = "devidDuhovni"
     rockMusicRoom.addPerson(person1)
     rockMusicRoom.addPerson(person2)
     rockMusicRoom.updateStatus("semenbIch", "разговаривает")
