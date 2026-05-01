@@ -1,8 +1,8 @@
 ﻿package org.example.lesson_11
 
 class Room(
-    var cover: String = "пикча",
-    var roomTheme: String = "",
+    val cover: String,
+    val roomTheme: String,
     val listOfParticipants: MutableList<Person> = mutableListOf(),
 ) {
     fun addPerson(person: Person) = listOfParticipants.add(person)
@@ -32,8 +32,8 @@ class Room(
 }
 
 class Person(
-    var avatar: String = "аватарка",
-    var nickname: String = "",
+    var avatar: String,
+    var nickname: String,
     var status: String = "микрофон выключен",
 )
 
