@@ -1,24 +1,23 @@
 ﻿package org.example.lesson_11
 
 class Category(
-    val id: Int = 0,
-    val title: String = "",
-    val nameCategory: String = "",
-    val description: String = "",
-    val imageUrl: String = "",
-    val listOfRecipes: List<String> = listOf(),
+    val id: Int,
+    val title: String,
+    val description: String,
+    val imageUrl: String,
+    val listOfRecipes: List<Recipe>,
 )
 
 class Ingredient(
-    val nameIngredient: String = "",
-    val unitOfMeasure: String = "",
-    val quantity: Int = 0,
+    val description: String,
+    val unitOfMeasure: String,
+    val quantity: String,
 )
 
 class Recipe(
-    val id: Int = 0,
-    val title: String = "",
-    val ingredients: List<String> = listOf(),
-    val cookingMethod: List<String> = listOf(),
-    val imageUrl: String = "",
+    val id: Int,
+    val title: String,
+    val ingredients: List<Ingredient>,
+    val cookingMethod: List<String>,
+    val imageUrl: String,
 )
