@@ -5,7 +5,7 @@ class Category(
     val title: String,
     val description: String,
     val imageUrl: String,
-    val listOfRecipes: List<Recipe>,
+    val recipes: List<Recipe>,
 )
 
 class Ingredient(
