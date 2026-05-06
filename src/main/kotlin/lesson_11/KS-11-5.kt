@@ -1,10 +1,9 @@
 package org.example.lesson_11
 
-class Forum(
-    val participants: MutableList<ForumParticipant> = mutableListOf(),
-    val messages: MutableList<ForumMessage> = mutableListOf(),
-) {
-    var id = 1
+class Forum {
+    private val participants: MutableList<ForumParticipant> = mutableListOf()
+    private val messages: MutableList<ForumMessage> = mutableListOf()
+    private var id = 1
 
     fun createNewUser(userName: String): ForumParticipant {
         val newUser = ForumParticipant(id++, userName)
@@ -12,11 +11,10 @@ class Forum(
         return newUser
     }
 
-    fun createNewMessage(userId: Int): ForumMessage? {
+    fun createNewMessage(userId: Int, message: String): ForumMessage? {
         for (person in participants) {
             if (person.userId == userId) {
-                println("Пользователь ${person.userName} пишет сообщение: ")
-                val post = ForumMessage(userId, readln())
+                val post = ForumMessage(userId, message)
                 messages.add(post)
                 return post
             }
@@ -47,11 +45,11 @@ class ForumMessage(
 
 fun main() {
     val forum = Forum()
-    forum.createNewUser("test1")
-    forum.createNewUser("test2")
-    forum.createNewMessage(1)
-    forum.createNewMessage(1)
-    forum.createNewMessage(2)
-    forum.createNewMessage(2)
+    forum.createNewUser("Семёныч")
+    forum.createNewUser("Викторыч")
+    forum.createNewMessage(1, message = "test message1 Семёныча")
+    forum.createNewMessage(1, message = "test message2 Семёныча")
+    forum.createNewMessage(2, message = "test message1 Викторыча")
+    forum.createNewMessage(2, message = "test message2 Викторыча")
     forum.printThread()
 }
