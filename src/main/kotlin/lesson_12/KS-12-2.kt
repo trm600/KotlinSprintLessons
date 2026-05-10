@@ -5,18 +5,18 @@ class Weather2(
     var nighttimeTemperature2: Int,
     var isRainfall: Boolean,
 ) {
+    val rainfall: String
+
+    init {
+        rainfall = if (isRainfall) "Да" else "Нет"
+    }
+
     fun printInfo2() {
         println(
             """
         Дневная температура: $daytimeTemperature2
         Ночная температура: $nighttimeTemperature2
-        Осадки: ${
-                if (isRainfall) {
-                    "Да"
-                } else {
-                    "Нет"
-                }
-            }
+        Осадки: $rainfall
         """.trimIndent()
         )
     }
