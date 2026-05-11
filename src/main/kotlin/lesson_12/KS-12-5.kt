@@ -1,6 +1,5 @@
 ﻿package org.example.lesson_12
 
-import java.util.Locale
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
@@ -12,7 +11,7 @@ class Weather5(
     nighttimeTemperature5: Int,
     isRainfall5: Boolean,
 ) {
-    val rainfall5: String
+    val rainfall5: Boolean
     val daytimeTemperature5Celsius: Int
     val nighttimeTemperature5Celsius: Int
 
@@ -22,15 +21,7 @@ class Weather5(
         }
         daytimeTemperature5Celsius = (daytimeTemperature5 - ABSOLUTE_ZERO).roundToInt()
         nighttimeTemperature5Celsius = (nighttimeTemperature5 - ABSOLUTE_ZERO).roundToInt()
-        rainfall5 = if (isRainfall5) "Да" else "Нет"
-        println(
-            """
-        Дневная температура: $daytimeTemperature5Celsius
-        Ночная температура: $nighttimeTemperature5Celsius
-        Осадки: $rainfall5
-        
-        """.trimIndent()
-        )
+        rainfall5 = isRainfall5
     }
 }
 
@@ -43,21 +34,15 @@ fun main() {
         )
     }
 
-    println("Дневные температуры: ")
-    val dayTemperature = weatherForMonth.map { it.daytimeTemperature5Celsius }
-    println(dayTemperature)
-
-    println("Ночные температуры: ")
-    val nightTemperature = weatherForMonth.map { it.nighttimeTemperature5Celsius }
-    println(nightTemperature)
-
-    val daysWithRainfalls = weatherForMonth.count { it.rainfall5 == "Да" }
+    val daysWithRainfalls = weatherForMonth.count { it.rainfall5 }
     println("Дней с осадками: $daysWithRainfalls")
 
-    val middleDayTemperature = "%.2f".format(Locale.US, dayTemperature.average())
+    val dayTemperature = weatherForMonth.map { it.daytimeTemperature5Celsius }
+    val middleDayTemperature = dayTemperature.average().roundToInt()
     println("Средняя дневная температура: $middleDayTemperature")
 
-    val middleNightTemperature = "%.2f".format(Locale.US, nightTemperature.average())
+    val nightTemperature = weatherForMonth.map { it.nighttimeTemperature5Celsius }
+    val middleNightTemperature = nightTemperature.average().roundToInt()
     println("Средняя ночная температура: $middleNightTemperature")
 }
 
