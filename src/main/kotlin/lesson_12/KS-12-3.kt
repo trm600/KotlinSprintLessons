@@ -9,23 +9,16 @@ class Weather3(
     nighttimeTemperature3: Int,
     isRainfall3: Boolean,
 ) {
-    val rainfall3: String
-    val daytimeTemperature3Celsius: Int
-    val nighttimeTemperature3Celsius: Int
-
-
-    init {
-        rainfall3 = if (isRainfall3) "Да" else "Нет"
-        daytimeTemperature3Celsius = (daytimeTemperature3 - ABSOLUTE_ZERO).roundToInt()
-        nighttimeTemperature3Celsius = (nighttimeTemperature3 - ABSOLUTE_ZERO).roundToInt()
-    }
+    val hasPrecipitation: Boolean = isRainfall3
+    val daytimeTemperature3Celsius: Int = (daytimeTemperature3 - ABSOLUTE_ZERO).roundToInt()
+    val nighttimeTemperature3Celsius: Int = (nighttimeTemperature3 - ABSOLUTE_ZERO).roundToInt()
 
     fun printInfo3() {
         println(
             """
         Дневная температура: $daytimeTemperature3Celsius
         Ночная температура: $nighttimeTemperature3Celsius
-        Осадки: $rainfall3
+        Осадки: ${if (hasPrecipitation) "Да" else "Нет"}
         """.trimIndent()
         )
     }
