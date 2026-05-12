@@ -1,9 +1,9 @@
 ﻿package org.example.lesson_12
 
 class Weather2(
-    var daytimeTemperature2: Int,
-    var nighttimeTemperature2: Int,
-    var isRainfall: Boolean,
+    val daytimeTemperature2: Int,
+    val nighttimeTemperature2: Int,
+    val isRainfall: Boolean,
 ) {
     val rainfall: String
 
