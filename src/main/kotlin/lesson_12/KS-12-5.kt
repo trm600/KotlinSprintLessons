@@ -4,7 +4,6 @@ import kotlin.math.roundToInt
 import kotlin.random.Random
 
 const val ABSOLUTE_ZERO: Float = 273.15f
-const val ZERO = 0
 
 class Weather5(
     daytimeTemperature5: Int,
@@ -16,7 +15,7 @@ class Weather5(
     val nighttimeTemperature5Celsius: Int
 
     init {
-        require(daytimeTemperature5 >= ZERO && nighttimeTemperature5 >= ZERO) {
+        require(daytimeTemperature5 >= 0 && nighttimeTemperature5 >= 0) {
             "Температура в Кельвинах не может быть отрицательной"
         }
         daytimeTemperature5Celsius = (daytimeTemperature5 - ABSOLUTE_ZERO).roundToInt()
