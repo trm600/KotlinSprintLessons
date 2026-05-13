@@ -2,7 +2,6 @@
 
 import kotlin.math.roundToInt
 
-const val ABSOLUTE_ZERO: Float = 273.15f
 const val ZERO = 0
 
 class Weather4(

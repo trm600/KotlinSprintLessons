@@ -3,8 +3,6 @@
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
-const val ABSOLUTE_ZERO: Float = 273.15f
-
 class Weather5(
     daytimeTemperature5: Int,
     nighttimeTemperature5: Int,
