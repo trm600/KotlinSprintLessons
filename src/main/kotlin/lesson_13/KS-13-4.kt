@@ -30,8 +30,7 @@ fun main() {
 
         print("Введите номер телефона: ")
         val phoneNumber = readln().toLongOrNull()
-        val isNullPhone = phoneNumber == null
-        if (isNullPhone) {
+        if (phoneNumber == null) {
             println("\nВведен некорректный номер телефона, запись не будет добавлена\n")
             continue
         }
