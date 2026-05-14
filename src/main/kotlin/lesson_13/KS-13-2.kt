@@ -1,6 +1,6 @@
 ﻿package org.example.lesson_13
 
-class PhoneDirectory1(
+class Contact(
     val name: String,
     val phoneNumber: Long,
     val company: String? = null,
@@ -11,7 +11,7 @@ class PhoneDirectory1(
 }
 
 fun main() {
-    val subscriber = PhoneDirectory1(
+    val subscriber = Contact(
         name = "Васёк",
         phoneNumber = 89996123456,
     )
