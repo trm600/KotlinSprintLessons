@@ -7,12 +7,12 @@ class Contact2(
 )
 
 fun main() {
-    var phoneInput: Long
+
 
     println("Введите номер телефона: ")
-    try {
-        phoneInput = readln().toLong()
-    } catch (e: Exception) {
+    val phoneInput: Long = try {
+        readln().toLong()
+    } catch (e: NumberFormatException) {
         println("Ошибка: ${e::class.simpleName}")
         return
     }
