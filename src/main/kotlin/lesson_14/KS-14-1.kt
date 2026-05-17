@@ -23,10 +23,11 @@ class Icebreaker(
     crew: Int = 350,
     liftingCapacity: Long = 62000,
     passengerCapacity: Int = 100,
-    val isBreakIce: Boolean = true,
     val purpose: String,
     val iceClass: String,
-) : Liner(shipName, speed, crew, liftingCapacity, passengerCapacity)
+) : Liner(shipName, speed, crew, liftingCapacity, passengerCapacity) {
+    val isBreakIce: Boolean = true
+}
 
 fun main() {
     val liner1 = Liner(
