@@ -7,8 +7,6 @@ class Contact2(
 )
 
 fun main() {
-
-
     println("Введите номер телефона: ")
     val phoneInput: Long = try {
         readln().toLong()
@@ -16,6 +14,7 @@ fun main() {
         println("Ошибка: ${e::class.simpleName}")
         return
     }
+
     val contact = Contact2(
         name = "Захарыч",
         company = "Google",
