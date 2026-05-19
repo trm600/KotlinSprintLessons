@@ -2,27 +2,27 @@
 
 open class Liner(
     val shipName: String,
-    val speed: Float = 20.36f,
-    val crew: Int = 1704,
-    val liftingCapacity: Long = 184000,
-    val passengerCapacity: Int = 6327,
+    open val speed: Float = 20.36f,
+    open val crew: Int = 1704,
+    open val liftingCapacity: Long = 184000,
+    open val passengerCapacity: Int = 6327,
 )
 
 class CargoShip(
     shipName: String,
-    speed: Float = 15.23f,
-    crew: Int = 700,
-    liftingCapacity: Long = 400000,
-    passengerCapacity: Int = 200,
+    override val speed: Float = 15.23f,
+    override val crew: Int = 700,
+    override val liftingCapacity: Long = 400000,
+    override val passengerCapacity: Int = 200,
     val type: String,
 ) : Liner(shipName, speed, crew, liftingCapacity, passengerCapacity)
 
 class Icebreaker(
     shipName: String,
-    speed: Float = 10.12f,
-    crew: Int = 350,
-    liftingCapacity: Long = 62000,
-    passengerCapacity: Int = 100,
+    override val speed: Float = 10.12f,
+    override val crew: Int = 350,
+    override val liftingCapacity: Long = 62000,
+    override val passengerCapacity: Int = 100,
     val purpose: String,
     val iceClass: String,
 ) : Liner(shipName, speed, crew, liftingCapacity, passengerCapacity) {
@@ -40,6 +40,6 @@ fun main() {
     val iceBreaker1 = Icebreaker(
         "Дудинка",
         purpose = "Вспомогательные ледоколы",
-        iceClass = "Icebreaker6"
+        iceClass = "Icebreaker6",
     )
 }
