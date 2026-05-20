@@ -10,23 +10,24 @@ open class Liner(
 
 class CargoShip(
     shipName: String,
-    override val speed: Float = 15.23f,
-    override val crew: Int = 700,
-    override val liftingCapacity: Long = 400000,
-    override val passengerCapacity: Int = 200,
     val type: String,
-) : Liner(shipName, speed, crew, liftingCapacity, passengerCapacity)
+) : Liner(shipName) {
+    override val speed: Float = 15.23f
+    override val crew: Int = 700
+    override val liftingCapacity: Long = 400000
+    override val passengerCapacity: Int = 200
+}
 
 class Icebreaker(
     shipName: String,
-    override val speed: Float = 10.12f,
-    override val crew: Int = 350,
-    override val liftingCapacity: Long = 62000,
-    override val passengerCapacity: Int = 100,
     val purpose: String,
     val iceClass: String,
-) : Liner(shipName, speed, crew, liftingCapacity, passengerCapacity) {
+) : Liner(shipName) {
     val isBreakIce: Boolean = true
+    override val speed: Float = 10.12f
+    override val crew: Int = 350
+    override val liftingCapacity: Long = 62000
+    override val passengerCapacity: Int = 100
 }
 
 fun main() {
