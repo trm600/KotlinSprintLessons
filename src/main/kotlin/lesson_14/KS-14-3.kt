@@ -1,7 +1,9 @@
 ﻿package org.example.lesson_14
 
-import kotlin.math.pow
 import kotlin.math.PI
+
+const val COLOR_BLACK = "Черный"
+const val COLOR_WHITE = "Белый"
 
 abstract class Figure(
     val color: String,
@@ -14,7 +16,7 @@ class Circle(
     color: String,
     val radius: Double,
 ) : Figure(color) {
-    override fun calculateArea() = PI * radius.pow(2)
+    override fun calculateArea() = PI * radius * radius
     override fun calculatePerimeter() = 2 * PI * radius
 }
 
@@ -29,10 +31,10 @@ class Rectangle(
 
 fun main() {
     val figures = listOf(
-        Circle("Черный", 5.0),
-        Rectangle("Белый", 15.0, 23.5),
-        Circle("Черный", 6.6),
-        Rectangle("Белый", 24.7, 23.6)
+        Circle(COLOR_BLACK, 5.0),
+        Rectangle(COLOR_WHITE, 15.0, 23.5),
+        Circle(COLOR_BLACK, 6.6),
+        Rectangle(COLOR_WHITE, 24.7, 23.6)
     )
     val sumBlackPerimeter = "%.2f".format(
         figures
