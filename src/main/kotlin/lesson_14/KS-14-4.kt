@@ -2,22 +2,22 @@ package org.example.lesson_14
 
 open class CelestialBody(
     val name: String,
-    val isAtmosphere: Boolean,
-    val isCanDisembark: Boolean,
+    val hasAtmosphere: Boolean,
+    val canDisembark: Boolean,
 )
 
-open class Planet(
+class Planet(
     name: String,
-    isAtmosphere: Boolean,
-    isCanDisembark: Boolean,
-    val satellitesList: List<Satellite> = listOf(),
-) : CelestialBody(name, isAtmosphere, isCanDisembark) {
+    hasAtmosphere: Boolean,
+    canDisembark: Boolean,
+    val satellites: List<Satellite> = listOf(),
+) : CelestialBody(name, hasAtmosphere, canDisembark) {
 
     fun printInfo() {
         println("Планета: \n$name")
         println("Спутники:")
-        if (satellitesList.isNotEmpty()) {
-            for (satellite in satellitesList) {
+        if (satellites.isNotEmpty()) {
+            for (satellite in satellites) {
                 println(satellite.name)
             }
         } else {
@@ -28,18 +28,18 @@ open class Planet(
 
 class Satellite(
     name: String,
-    isAtmosphere: Boolean,
-    isCanDisembark: Boolean,
-) : CelestialBody(name, isAtmosphere, isCanDisembark)
+    hasAtmosphere: Boolean,
+    canDisembark: Boolean,
+) : CelestialBody(name, hasAtmosphere, canDisembark)
 
 fun main() {
     val planet = Planet(
         "Марс",
-        isAtmosphere = true,
-        isCanDisembark = true,
-        satellitesList = listOf(
-            Satellite("Фобос", isAtmosphere = false, isCanDisembark = false),
-            Satellite("Деймос", isAtmosphere = false, isCanDisembark = false),
+        hasAtmosphere = true,
+        canDisembark = true,
+        satellites = listOf(
+            Satellite("Фобос", hasAtmosphere = false, canDisembark = false),
+            Satellite("Деймос", hasAtmosphere = false, canDisembark = false),
         ),
     )
 
