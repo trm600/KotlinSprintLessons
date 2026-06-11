@@ -1,6 +1,6 @@
 ﻿package org.example.lesson_14
 
-class Chat() {
+class Chat {
     var id: Long = 0
     val messages = mutableListOf<Message>()
 
@@ -10,6 +10,31 @@ class Chat() {
 
     fun addThreadMessage(text: String, author: String, parentMessageId: Long) {
         messages.add(ChildMessage(message = text, author = author, id = ++id, parentMessageId = parentMessageId))
+    }
+
+    fun printChat() {
+        val groups = this.messages.groupBy { message ->
+            if (message is ChildMessage) {
+                message.parentMessageId
+            } else {
+                message.id
+            }
+        }
+
+        for ((id, messages) in groups) {
+            val parent = messages.first { it.id == id && it !is ChildMessage }
+            val children = messages.filterIsInstance<ChildMessage>()
+
+            println("${parent.author} написал:")
+            println(parent.message)
+            println("---------------------------")
+
+            for (child in children) {
+                println("\t${child.author} ответил:")
+                println("\t${child.message}")
+                println("\t---------------------------")
+            }
+        }
     }
 }
 
@@ -26,31 +51,6 @@ class ChildMessage(
     val parentMessageId: Long,
 ) : Message(message, author, id)
 
-fun printChat(chat: Chat) {
-    val groups = chat.messages.groupBy { message ->
-        if (message is ChildMessage) {
-            message.parentMessageId
-        } else {
-            message.id
-        }
-    }
-
-    for ((id, messages) in groups) {
-        val parent = messages.first { it.id == id && it !is ChildMessage }
-        val children = messages.filterIsInstance<ChildMessage>()
-
-        println("${parent.author} написал:")
-        println(parent.message)
-        println("---------------------------")
-
-        for (child in children) {
-            println("\t${child.author} ответил:")
-            println("\t${child.message}")
-            println("\t---------------------------")
-        }
-    }
-}
-
 fun main() {
     val chat = Chat()
 
@@ -63,5 +63,5 @@ fun main() {
     chat.addThreadMessage("ответ - test7", "Henry", 2)
     chat.addMessage("dsfsdf", "Masha")
     chat.addThreadMessage("привет ответ", "Masha", 4)
-    printChat(chat)
+    chat.printChat()
 }
