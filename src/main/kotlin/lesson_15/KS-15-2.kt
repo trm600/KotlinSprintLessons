@@ -22,7 +22,7 @@ class WeatherServer {
 fun main() {
     val temperature = Temperature(25)
     val precipitation = PrecipitationAmount(10)
-    val message = WeatherServer()
-    message.sendMessage(temperature)
-    message.sendMessage(precipitation)
+    val weatherServer = WeatherServer()
+    weatherServer.sendMessage(temperature)
+    weatherServer.sendMessage(precipitation)
 }
