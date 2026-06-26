@@ -6,6 +6,7 @@ const val PASSENGER_CAR_PASSENGER_MAX = 3
 
 interface Riding {
     val transportName: String
+
     fun drive() {
         println("Автомобиль $transportName поехал.")
     }
@@ -17,6 +18,7 @@ interface Riding {
 
 interface TransportingPassenger {
     val transportName: String
+
     fun seatPassenger(passengerName: String) {
         println("Пассажир $passengerName сел в автомобиль $transportName")
     }
@@ -28,6 +30,7 @@ interface TransportingPassenger {
 
 interface TransportingGoods {
     val transportName: String
+
     fun loadCargo(cargoName: String, value: Int) {
         println("Груз $cargoName загружен в автомобиль $transportName в количестве $value кг")
     }
