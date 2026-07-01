@@ -1,6 +1,6 @@
 package org.example.lesson_16
 
-class User(val name: String, private val password: String) {
+class User(val login: String, private val password: String) {
     fun checkPassword(verifiablePass: String) = password == verifiablePass
 }
 
