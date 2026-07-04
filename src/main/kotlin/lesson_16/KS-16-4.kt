@@ -2,21 +2,21 @@
 
 class Order(private val orderNumber: Long) {
     var orderStatus = "Принят в работу"
-    private set
+        private set
 
-    internal fun changeStatus(newStatus: String) {
+    private fun changeStatus(newStatus: String) {
         orderStatus = newStatus
     }
-}
 
-fun manager(order: Order, setStatus: String) {
-    order.changeStatus(setStatus)
+    fun manager(setStatus: String) {
+        changeStatus(setStatus)
+    }
 }
 
 fun main() {
     val order = Order(12345678)
 
     println("Статус: ${order.orderStatus}")
-    manager(order, "В пути")
+    order.manager("В пути")
     println("Статус: ${order.orderStatus}")
 }
