@@ -1,11 +1,9 @@
 package org.example.lesson_17
 
-class Ship(name: String, val averageSpeed: Int, val homePort: String) {
+class Ship(name: String, var averageSpeed: Int, var homePort: String) {
     var name = name
         set(value) {
-            if (value != field) {
-                println("Имя нельзя менять!")
-            }
+            println("Имя нельзя менять!")
         }
 }
 
