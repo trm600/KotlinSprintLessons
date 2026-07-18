@@ -4,7 +4,8 @@ enum class Category {
 
     CLOTHING,
     STATIONERY,
-    MISCELLANEOUS;
+    MISCELLANEOUS,
+    ;
 
     fun getName(): String {
         return when (this) {
