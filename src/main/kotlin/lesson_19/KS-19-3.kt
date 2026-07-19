@@ -6,7 +6,7 @@ class Spaceship(val name: String) {
         //TODO Нужна информация о дополнительной логике
     }
 
-    fun landing() {
+    fun land() {
         TODO()
     }
 
@@ -17,5 +17,5 @@ class Spaceship(val name: String) {
 fun main() {
     val ship = Spaceship("Лодочка")
     ship.takeOff()
-    ship.landing()
+    ship.land()
 }
