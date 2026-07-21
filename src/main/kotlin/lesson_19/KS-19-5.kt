@@ -7,11 +7,11 @@ enum class Gender(val rusName: String) {
 
 }
 
-class People private constructor(val name: String, val gender: Gender) {
+class Human private constructor(val name: String, val gender: Gender) {
 
     companion object {
 
-        fun addPerson(peopleName: String, peopleGender: String): People {
+        fun addPerson(peopleName: String, peopleGender: String): Human {
 
             require(peopleName.isNotBlank()) { "Имя не может быть пустым! Повторите ввод!\n" }
             require(peopleGender.isNotBlank()) { "Пол не может быть пустым! Повторите ввод!\n" }
@@ -28,7 +28,7 @@ class People private constructor(val name: String, val gender: Gender) {
                 }
             }
 
-            return People(name = peopleName, gender = checkGender())
+            return Human(name = peopleName, gender = checkGender())
 
         }
     }
@@ -37,7 +37,7 @@ class People private constructor(val name: String, val gender: Gender) {
 
 fun main() {
 
-    val cardIndex = mutableListOf<People>()
+    val cardIndex = mutableListOf<Human>()
     println("Доступны мужской и женский пол. Пол вводить в формате:\nмуж - мужской\nжен - женский\n")
 
     while (cardIndex.size < 5) {
@@ -48,7 +48,7 @@ fun main() {
         println()
 
         try {
-            cardIndex.add(People.addPerson(name, gender))
+            cardIndex.add(Human.addPerson(name, gender))
         } catch (e: IllegalArgumentException) {
             println(e.message)
         }
