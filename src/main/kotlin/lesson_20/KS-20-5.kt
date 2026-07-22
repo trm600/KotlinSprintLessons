@@ -9,19 +9,14 @@ class Robot {
         "Чёткая фраза",
         "На посошок и на горшок"
     )
-    var modify: ((String) -> String)? = null
+    var modify: ((String) -> String) = { it }
 
     fun setModifier(modifier: (String) -> String) {
         modify = modifier
     }
 
     fun say() {
-
-        val phrase = phrases.random()
-        val result = modify?.invoke(phrase) ?: phrase
-
-        println(result)
-
+        println(modify(phrases.random()))
     }
 
 }
